@@ -1,5 +1,9 @@
 """Import the Account class from the Account.py file."""
-# ADD YOUR CODE HERE
+from Account import Account
+
+"""create a create_savings_account function that will create a savings account instance, 
+calculate the interest earned based on user input, update the account balance with the earned interest, 
+and return the updated balance and interest earned"""
 
 # Define a function for the Savings Account
 def create_savings_account(balance, interest_rate, months):
@@ -7,7 +11,7 @@ def create_savings_account(balance, interest_rate, months):
 
     Args:
         balance (float): The initial savings account balance.
-        interest_rate (float): The APR interest rate for the savings account.
+        interest_rate (float): The APR interest rate for the savings accoun
         months (int): The length of months to determine the amount of interest.
 
     Returns:
@@ -16,19 +20,26 @@ def create_savings_account(balance, interest_rate, months):
     """
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
     #  Hint: You need to add the interest as a value, i.e, 0.
-    # ADD YOUR CODE HERE
+    
+    savings_account = Account(balance, 0)
 
     # Calculate interest earned
-     # ADD YOUR CODE HERE
+
+    calculated_interest = balance * (interest_rate/100) * (months/12)
 
     # Update the savings account balance by adding the interest earned
-    # ADD YOUR CODE HERE
+
+    updated_balance = calculated_interest + balance
 
     # Pass the updated_balance to the set balance method using the instance of the SavingsAccount class.
-    # ADD YOUR CODE HERE
+
+    savings_account.set_balance(updated_balance)
 
     # Pass the interest_earned to the set interest method using the instance of the SavingsAccount class.
-    # ADD YOUR CODE HERE
+
+    savings_account.set_interest(calculated_interest)
 
     # Return the updated balance and interest earned.
-    return  # ADD YOUR CODE HERE
+
+    return updated_balance, calculated_interest
+    
